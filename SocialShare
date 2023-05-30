@@ -1,0 +1,29 @@
+<div class="share-widget">
+  <a href="javascript:void(0);" class="share-instagram">Share on Instagram</a>
+  <a href="javascript:void(0);" class="share-twitter">Share on Twitter</a>
+  <a href="javascript:void(0);" class="copy-link">Copy Link</a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Share on Instagram
+    const shareInstagram = document.querySelector(".share-instagram");
+    shareInstagram.addEventListener("click", function() {
+      window.open("https://www.instagram.com/share?url=" + encodeURIComponent(window.location.href), "_blank");
+    });
+
+    // Share on Twitter
+    const shareTwitter = document.querySelector(".share-twitter");
+    shareTwitter.addEventListener("click", function() {
+      window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(window.location.href), "_blank");
+    });
+
+    // Copy Link
+    const copyLink = document.querySelector(".copy-link");
+    copyLink.addEventListener("click", function() {
+      navigator.clipboard.writeText(window.location.href).then(function() {
+        alert("Link copied to clipboard!");
+      });
+    });
+  });
+</script>
